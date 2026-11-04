@@ -1899,7 +1899,7 @@ const closeSheet=()=>{$('#sheet-root').innerHTML=''};
 async function copyText(txt,msg){try{await navigator.clipboard.writeText(txt);toast(msg||'Copied',{icon:I.check})}catch(e){sheet('Copy link',`<div class="search" style="background:var(--surface)"><input id="cp-field" value="${esc(txt)}" readonly aria-label="Link"></div><p class="small">Select the text above and copy it.</p>`);setTimeout(()=>{const f=$('#cp-field');f&&(f.focus(),f.select())},50)}}
 async function shareOrCopy(url,title,msg){if(navigator.share&&matchMedia('(pointer:coarse)').matches){try{await navigator.share({title,url});return}catch(e){if(e.name==='AbortError')return}}copyText(url,msg)}
 let route={n:'welcome',p:null},hist=[];
-function go(n,p=null){hist.push({...route,y:window.scrollY});route={n,p};UI.confirm=null;window.scrollTo(0,0);render(true)}
+function go(n,p=null){hist.push({...route,y:window.scrollY});route={n,p};if(n==='upgrade'&&!window.__klvPw&&typeof Cloud!=='undefined'&&Cloud.user()){window.__klvPw=1;try{sb('/rest/v1/rpc/klv_event',{method:'POST',body:{m:'Viewed Dibs+'}}).catch(()=>{})}catch(e){}}/* Klaviyo: paywall viewed */UI.confirm=null;window.scrollTo(0,0);render(true)}
 function back(){const r=hist.pop()||{n:'home'};route=r;render(true);window.scrollTo(0,r.y||0)}
 function tab(n){hist=[];route={n};UI.confirm=null;render(true);window.scrollTo(0,0)}
 function bar(title,{back:b=true,right='',line=false}={}){return `<header class="bar g ${line?'line':''}">${b?`<button class="ib" data-act="back" aria-label="Back" style="margin-left:-8px">${I.back}</button>`:''}${title?`<span class="t">${title}</span>`:''}<div class="r">${right}</div></header>`}
