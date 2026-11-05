@@ -6,6 +6,7 @@
 <title>Dibs Wishlist: Wishlist App, Price Alerts &amp; Gift Registry</title>
 <meta name="description" content="The free wishlist app for Australia. Save from any store, get price drop alerts and share birthday, Christmas and Secret Santa lists.">
 <meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="apple-itunes-app" content="app-id=6828414631">
 <link rel="canonical" href="https://dibswishlist.com/">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -3825,7 +3826,7 @@ if(MODE==='web'&&WEB_APP_ONLY&&!IS_DEMO){
  /* header: Log in / Join for visitors */
  const _h=webHeader;webHeader=function(){const h=_h.apply(this,arguments);if(S.account)return h;return h.replace('<div class="r">','<div class="r"><button class="wh-auth" data-act="auth" data-v="login">Log in</button><button class="wh-auth pink" data-act="auth" data-v="signup">Join free</button>')};
  /* plain footer links on every page (privacy/terms must be one click from the home page) */
- const _rr=render;render=function(){const x=_rr.apply(this,arguments);try{const v=document.getElementById('view');if(v&&!v.querySelector('.wfoot2')&&!['welcome','login','signup'].includes(route.n))v.insertAdjacentHTML('beforeend',`<footer class="wfoot2"><nav><a href="christmas-wishlist.html">Christmas &amp; Secret Santa</a><a href="black-friday-wishlist.html">Black Friday</a><a href="wedding-registry.html">Wedding registry</a><a href="birthday-wishlist.html">Birthday wishlist</a><a href="baby-shower-registry.html">Baby shower registry</a><a href="formal-dress-wishlist.html">Formal dresses</a><a href="euro-summer-packing-list.html">Euro summer</a><a href="engagement-ring-wishlist.html">Engagement rings</a><a href="price-drop-alerts.html">Price drop alerts</a><a href="support.html">Support</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav><p>© ${new Date().getFullYear()} ${BRAND} Wishlist · info@dibswishlist.com</p></footer>`)}catch(e){}return x};
+ const _rr=render;render=function(){const x=_rr.apply(this,arguments);try{const v=document.getElementById('view');if(v&&!v.querySelector('.wfoot2')&&!['welcome','login','signup'].includes(route.n))v.insertAdjacentHTML('beforeend',`<footer class="wfoot2"><nav><a href="christmas-wishlist.html">Christmas &amp; Secret Santa</a><a href="black-friday-wishlist.html">Black Friday</a><a href="wedding-registry.html">Wedding registry</a><a href="birthday-wishlist.html">Birthday wishlist</a><a href="baby-shower-registry.html">Baby shower registry</a><a href="formal-dress-wishlist.html">Formal dresses</a><a href="euro-summer-packing-list.html">Euro summer</a><a href="engagement-ring-wishlist.html">Engagement rings</a><a href="price-drop-alerts.html">Price drop alerts</a><a href="wishlist-app.html">Wishlist app</a><a href="gift-registry-app.html">Gift registry app</a><a href="shared-wishlist.html">Shared wishlist</a><a href="support.html">Support</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav><p>© ${new Date().getFullYear()} ${BRAND} Wishlist · info@dibswishlist.com</p></footer>`)}catch(e){}return x};
 }
 
 /* Website visitors without an account: anything that saves or makes a list asks them to make an account first
